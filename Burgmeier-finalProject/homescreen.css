@@ -1,0 +1,190 @@
+/*imports the font used fron google fonts*/
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
+
+body{
+	width: 100%;
+	background: #1f2029;
+	overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+	font-size: 17px;
+}
+
+div#pageTitle{
+	height: 30vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+div#pageTitle>h1{
+	font-size: 70px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	border-radius: 50px;
+	padding: 10px;
+	margin: 5px;
+	-webkit-text-stroke: 2px #ffffff;
+    text-stroke: 2px #ffffff;
+  -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+  color: transparent;
+}
+div#pageTitle>p{
+	font-size: 20px;
+	font-weight: 700;
+	color: white;
+	margin: 5px;
+}
+
+/* slider */
+div#energySlider{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+input#energy{
+	-webkit-appearance: none;
+  width: 80vw;
+  height: 30px;
+  border-radius: 10px;
+  background: #d3d3d3;
+  outline: none;
+    background-image: linear-gradient(138deg, #2F2C40, #BF3056);
+    
+
+}
+#energy::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 40px;
+  border-radius: 70px;
+  background: white;
+  cursor: pointer;
+}
+
+/*flex box for buttons*/
+div#genreButtons{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+/* defines checked and not checked for buttons */
+[type="radio"]:checked,
+[type="radio"]:not(:checked){
+	position: absolute;
+	left: -9999px;
+	width: 0;
+	height: 0;
+	visibility: hidden;
+}
+
+/* main styling for buttons*/
+.checkbox-genre:checked + label,
+.checkbox-genre:not(:checked) + label{
+	position: relative;
+	display: inline-block;
+	padding: 0;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 360px;
+	font-size: 28px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	margin: 10px;
+	text-align: center;
+	border-radius: 20px;
+	overflow: hidden;
+	/* transition for text in buttons to all white */
+	-webkit-transition: all 300ms linear;
+	transition: all 300ms linear;
+	-webkit-text-stroke: 1px #ffffff;
+    text-stroke: 1px #ffffff;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    color: transparent;
+}
+
+/* background color for button when not clicked*/
+.checkbox-genre:not(:checked) + label{
+	background-color: #353746;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+.checkbox-genre:checked + label{
+	background-color: transparent;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/*adds gradient to button when clicked*/
+.checkbox-genre:checked + label::before,
+.checkbox-genre:not(:checked) + label::before{
+	position: absolute;
+	content: '';
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 4px;
+	/*colors from saved palette*/
+	background-image: linear-gradient(138deg, #BF3056, #2F2C40);
+	z-index: -1;
+}
+
+/*adds shadow under button when hovered over */
+.checkbox-genre:not(:checked) + label:hover{
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* filled text aligns with outline text on click */
+.checkbox-genre:checked + label span,
+.checkbox-genre:not(:checked) + label span{
+	position: relative;
+	display: block;
+}
+/* uses webkit to fill text when clicked on */
+.checkbox-genre:checked + label span::before,
+.checkbox-genre:not(:checked) + label span::before{
+	position: absolute;
+	content: attr(data-hover);
+	top: 0;
+	left: 0;
+	width: 100%;
+	overflow: hidden;
+	-webkit-text-stroke: transparent;
+    text-stroke: transparent;
+    -webkit-text-fill-color: #ffffff;
+    text-fill-color: #ffffff;
+    color: #ffffff;
+	-webkit-transition: max-height 0.3s;
+	-moz-transition: max-height 0.3s;
+	transition: max-height 0.3s;
+	max-height: 0;
+}
+.checkbox-genre:checked + label span::before{
+	max-height: 100%;
+}
+
+div#submitButton{
+	padding: 40px;
+	height: 10vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+input#genButton{
+	width: 450px;
+	height: 75px;
+	font-size: 20px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	margin: 10px;
+	text-align: center;
+	border-radius: 20px;
+	outline: none;
+	color: white;
+	background-image: linear-gradient(138deg, #2F2C40, #BF3056);
+}

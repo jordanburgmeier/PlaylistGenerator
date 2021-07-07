@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/homescreen.css">
+    <script type="text/javascript" src="//cdn.embed.ly/player-0.0.11.min.js"></script>
+    <script src="homescreen.js"></script>
+    <title>Playlist Generator</title>
+  </head>
+  <body>
+
+    <div id="pageTitle">
+      <h1>PLAYLIST GENERATOR</h1>
+      <p>Select your energy level and favorite genre of music to get your personalized playlist:</p>
+    </div>
+
+    <form method="post" action="processPlaylist.php" autocomplete="on">
+
+
+        <div id="energySlider">
+            <input type="range" min="1" max="10" value="1" name="energy" id="energy" class="slider"/>
+        </div>
+
+        <div id="genreButtons">
+            <input class="checkbox-genre" type="radio" name="genre" id="genre-1" value="1"/>
+                <label  for="genre-1">
+                <span data-hover="POP">POP</span>
+                </label>
+
+            <input class="checkbox-genre" type="radio" name="genre" id="genre-2" value="2"/>
+                <label  for="genre-2">
+                <span data-hover="HIP HOP/RAP">HIP HOP/RAP</span>
+                </label>
+
+            <input class="checkbox-genre" type="radio" name="genre" id="genre-3" value="3"/>
+                <label  for="genre-3">
+                <span data-hover="COUNTRY">COUNTRY</span>
+                </label>
+
+            <input class="checkbox-genre" type="radio" name="genre" id="genre-4" value="4"/>
+                <label  for="genre-4">
+                <span data-hover="R&B/SOUL">R&B/SOUL</span>
+                </label>
+
+            <input class="checkbox-genre" type="radio" name="genre" id="genre-5" value="5"/>
+                <label  for="genre-5">
+                <span data-hover="SINGER/SONGWRITER">SINGER/SONGWRITER</span>
+                </label>
+
+            <input class="checkbox-genre" type="radio" name="genre" id="genre-6" value="6"/>
+                <label  for="genre-6">
+                    <span data-hover="ALTERNATIVE">ALTERNATIVE</span>
+                </label>
+
+        </div>
+
+        <div id="submitButton">
+            <input type="submit" value="GENERATE MY PLAYLIST" id="genButton"/>
+        </div>
+    </form>
+
+  </body>
+</html>
